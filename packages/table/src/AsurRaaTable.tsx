@@ -69,6 +69,8 @@ export interface refreshButtonProps extends ButtonProps {
   animate?: boolean;
 }
 
+export type IAbilitySubject = "all";
+
 type ViewMode = "COLUMN" | "TABLE" | "CALENDER";
 export interface AsurRaaTableProps<T> {
   antdTableProps?: TableProps<T>;
@@ -88,7 +90,7 @@ export interface AsurRaaTableProps<T> {
   detailActionText?: string;
   isVisibleColumn?: boolean;
   noViewAs?: boolean;
-  abilitySubject?: Array<string> | string;
+  abilitySubject?: IAbilitySubject;
   noNoColumn?: boolean;
   pageChange?: number;
   renderMoreActionButton?: (props: T) => ReactElement<typeof MenuItem>;
