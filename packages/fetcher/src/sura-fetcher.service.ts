@@ -146,6 +146,7 @@ export class HttpServiceWrapperFactory<D, R> {
     }
   };
 
+  // * Promise
   getAllPromise = async () => {
     try {
       const res = await this.theAxiosInstance.get<R[]>(`${this.path.GET_ALL}`);
