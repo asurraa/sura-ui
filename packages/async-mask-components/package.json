@@ -1,0 +1,27 @@
+{
+  "name": "@asurraa/sura-ui-async-mask-components",
+  "version": "1.0.0",
+  "description": "",
+  "author": "@asurraa",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "dev": "tsc -w",
+    "build": "tsc --build tsconfig.json",
+    "deps": "yarn upgrade-interactive --latest",
+    "prepublish": "yarn build",
+    "prettier": "prettier -c --write \"**/*\""
+  },
+  "dependencies": {
+    "react-color": "^2.19.3",
+    "reactcss": "^1.2.3",
+    "@types/react-color": "^3.0.4",
+    "@types/reactcss": "^1.2.3"
+  },
+  "files": [
+    "dist"
+  ]
+}
