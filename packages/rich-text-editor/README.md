@@ -1,15 +1,23 @@
 
  
 # @asurraa/sura-ui-rich-text-editor
-> Text Editor in React.
+> Text Editor in React built on top `draft-js`.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/asurraa/sura-ui/master/packages/rich-text-editor/assets/Screenshot%202021-07-26%20092510.png" />
+</p>
+
+### Use case 
+- use with input form
+
+### Installation 
+
+![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-rich-text-editor?style=flat-square?style=flat-square)
 ```sh
 yarn add @asurraa/sura-ui-rich-text-editor
 ```
 
-![enter image description here](https://raw.githubusercontent.com/asurraa/sura-ui/master/packages/rich-text-editor/assets/Screenshot%202021-07-26%20092510.png)
-
-### How to use?
+### Property
 |Props| Description |Type|
 |--|--|--|
 | value | value for input into the components |	`string`	|
@@ -43,4 +51,4 @@ export default TestPage;
 
 ### Dependency 
 - [draft-js](https://github.com/facebook/draft-js)
-- [draft-editor](https://github.com/HubSpot/draft-convert)
+- [draft-convert](https://github.com/HubSpot/draft-convert)
