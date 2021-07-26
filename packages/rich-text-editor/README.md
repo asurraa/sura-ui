@@ -50,4 +50,4 @@ export default TestPage;
 
 ### Dependency 
 - [draft-js](https://github.com/facebook/draft-js)
-- [draft-editor](https://github.com/HubSpot/draft-convert)
+- [draft-convert](https://github.com/HubSpot/draft-convert)
