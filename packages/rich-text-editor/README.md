@@ -6,8 +6,8 @@
 ```sh
 yarn add @asurraa/sura-ui-rich-text-editor
 ```
+<div style="text-align:center"><img src="https://raw.githubusercontent.com/asurraa/sura-ui/master/packages/rich-text-editor/assets/Screenshot%202021-07-26%20092510.png" /></div>
 
-![enter image description here](https://raw.githubusercontent.com/asurraa/sura-ui/master/packages/rich-text-editor/assets/Screenshot%202021-07-26%20092510.png)
 
 ### How to use?
 |Props| Description |Type|
