@@ -1,8 +1,8 @@
 import { AxiosInstance, AxiosResponse } from "axios";
-import { createContext, FC, useContext } from "react";
-import { AsurRaaSelectSearchBaserApiMetaInterface } from "./AsurRaaSelectBaseApi";
+import { ReactNode } from "react";
+import { createContext, useContext } from "react";
 
-export interface AsurRaaSelectBaseApiContextInterface {
+export interface AsurRaaSelectBaseApiContextInterface<Meta> {
   fetcher: AxiosInstance;
   uri: {
     page: string;
@@ -10,25 +10,26 @@ export interface AsurRaaSelectBaseApiContextInterface {
   parseSearch: (searchValue?: string, keyToSearch?: string) => string;
   parseResponse: {
     data: (res: AxiosResponse) => [];
-    meta: (
-      res: AxiosResponse | string | any
-    ) => AsurRaaSelectSearchBaserApiMetaInterface;
+    meta: (res: AxiosResponse | string | any) => Meta;
   };
+  metaTotalPage: (meta: Meta) => number;
+  children?: ReactNode;
 }
 
 const AsurRaaSelectBaseApiContext = createContext<
-  AsurRaaSelectBaseApiContextInterface | undefined
+  AsurRaaSelectBaseApiContextInterface<any> | undefined
 >(undefined);
 
-const AsurRaaSelectBaseApiProvider: FC<
-  AsurRaaSelectBaseApiContextInterface | undefined
-> = (props) => {
+const AsurRaaSelectBaseApiProvider = <M extends unknown>(
+  props: AsurRaaSelectBaseApiContextInterface<M>
+) => {
   return (
     <AsurRaaSelectBaseApiContext.Provider
       value={{
         fetcher: props.fetcher,
         uri: props.uri,
         parseResponse: props.parseResponse,
+        metaTotalPage: props.metaTotalPage,
         parseSearch: props.parseSearch,
       }}
     >

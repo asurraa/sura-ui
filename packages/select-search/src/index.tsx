@@ -13,10 +13,7 @@
  */
 
 export { AsurRaaSelectSearchBaseApi } from "./AsurRaaSelectBaseApi";
-export type {
-  AsurRaaSelectSearchBaseApiProps,
-  AsurRaaSelectSearchBaserApiMetaInterface,
-} from "./AsurRaaSelectBaseApi";
+export type { AsurRaaSelectSearchBaseApiProps } from "./AsurRaaSelectBaseApi";
 
 export {
   AsurRaaSelectBaseApiContext,

@@ -1,7 +1,7 @@
 {
   "name": "@asurraa/sura-ui-select-search",
-  "version": "1.0.1",
-  "description": "asurraa select search component",
+  "version": "1.0.2",
+  "description": "asurraa select search component base on api",
   "author": "@asurraa",
   "license": "MIT",
   "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/select-search",
@@ -25,8 +25,5 @@
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "ant-design-draggable-modal": "^1.0.0"
-  },
   "gitHead": "40c6a44c698b1165844808ba59f08b2260db44a8"
 }

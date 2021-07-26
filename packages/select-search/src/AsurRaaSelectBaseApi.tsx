@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 /* eslint-disable indent */
 import {
   Loading3QuartersOutlined,
@@ -11,14 +12,6 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import voca from "voca";
 import { useGetConfigAsuRaaSelectBaseApi } from "./AsurRaaSelectBaseApiProvider";
-
-export interface AsurRaaSelectSearchBaserApiMetaInterface {
-  currentPage: number;
-  itemCount: number;
-  itemsPerPage: number;
-  totalItems: number;
-  totalPages: number;
-}
 
 export interface AsurRaaSelectSearchBaseApiProps<T> {
   uriData: string;
@@ -44,13 +37,7 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
   const [search, setSearch] = useState<string>();
   const [loading, setLoading] = useState<boolean>(false);
 
-  const [meta, setMeta] = useState<AsurRaaSelectSearchBaserApiMetaInterface>({
-    currentPage: 1,
-    itemCount: 1,
-    itemsPerPage: 10,
-    totalItems: 1,
-    totalPages: 1,
-  });
+  const [meta, setMeta] = useState<unknown>();
 
   const searchParamGenerate = () => {
     let fullSearch = "&";
@@ -88,7 +75,6 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
   const refreshFetcher = () => {
     context?.fetcher.get(baseUriRoute).then((res: AxiosResponse<any>) => {
       const data = context?.parseResponse?.data(res);
-      console.log("data", res, data);
       setDataState([...data]);
     });
   };
@@ -98,7 +84,8 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
     if (
       !loading &&
       target.scrollTop + target.offsetHeight + 5 >= target.scrollHeight &&
-      page <= meta?.totalPages
+      // @ts-ignore
+      page <= context?.metaTotalPage?.(meta)
     ) {
       setPage(page + 1);
       fetcher();
@@ -123,7 +110,6 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
             setPage(1);
             setSearch(value);
           }}
-          style={{ width: "500px" }}
           onPopupScroll={onScroll}
           defaultActiveFirstOption={true}
           {...props.antdSelectProps}
