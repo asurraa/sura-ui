@@ -12,6 +12,7 @@
 
 ### Installation 
 
+![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-rich-text-editor?style=flat-square?style=flat-square)
 ```sh
 yarn add @asurraa/sura-ui-rich-text-editor
 ```
