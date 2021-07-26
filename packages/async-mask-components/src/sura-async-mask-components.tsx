@@ -15,7 +15,7 @@ export interface SuraAsyncMaskComponentsProps<T> {
   render?: (
     value: string,
     loading: boolean,
-    arrayValue: Array<keyof T>
+    arrayValue: string[]
   ) => ReactNode | JSX.Element;
 }
 export const SuraAsyncMaskComponents = <T extends unknown>({
@@ -24,42 +24,51 @@ export const SuraAsyncMaskComponents = <T extends unknown>({
   render,
 }: SuraAsyncMaskComponentsProps<T>) => {
   const [result, setResult] = useState<T>();
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState(true);
   // @ts-ignore
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(async () => {
     const res = await fetcher;
-
     setResult(res?.data);
     setLoading(false);
   }, [fetcher]);
 
   // @ts-ignore
-  const genericKeyContent = Object?.keys(result ?? {})?.map((key) => key);
-  const filterGenericKeyContent = genericKeyContent?.filter((key) =>
+  const genericKeyContent = Object?.keys(result ?? {})?.map?.((key) => key);
+  const filterGenericKeyContent = genericKeyContent?.filter?.((key) =>
     //   @ts-ignore
-    query?.includes(key)
+    query?.includes?.(key)
   );
+  const mapFilterGenericToValue = filterGenericKeyContent.map?.((key) => {
+    // @ts-ignore
+    return result?.[key];
+  });
 
   const DefaultRender = (
     <div style={{ display: "flex" }}>
-      {filterGenericKeyContent?.map((data, index) => (
-        <div key={index}>
-          <span style={{ marginRight: 5 }} />
-          {data}
-        </div>
-      ))}
+      {filterGenericKeyContent?.map?.((key, index) => {
+        return (
+          <div key={index}>
+            {
+              // @ts-ignore
+              result[key]
+            }
+            <span style={{ marginRight: 5 }} />
+          </div>
+        );
+      })}
     </div>
   );
 
-  const valueAsString = filterGenericKeyContent.join(" ");
+  // @ts-ignore
+  const valueAsString = mapFilterGenericToValue.join(" ");
   const OwnRender = (
     <div>
       {render?.(
+        // @ts-ignore
         valueAsString,
         loading,
-        // @ts-ignore
-        filterGenericKeyContent
+        mapFilterGenericToValue
       )}
     </div>
   );
@@ -69,7 +78,7 @@ export const SuraAsyncMaskComponents = <T extends unknown>({
       {render ? (
         <div>{OwnRender}</div>
       ) : (
-        <div>{loading ? <LoadingOutlined /> : { DefaultRender }}</div>
+        <div>{loading ? <LoadingOutlined /> : DefaultRender}</div>
       )}
     </Fragment>
   );
