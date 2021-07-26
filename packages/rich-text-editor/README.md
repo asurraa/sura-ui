@@ -3,13 +3,18 @@
 # @asurraa/sura-ui-rich-text-editor
 > Text Editor in React.
 
-```sh
-yarn add @asurraa/sura-ui-rich-text-editor
-```
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/asurraa/sura-ui/master/packages/rich-text-editor/assets/Screenshot%202021-07-26%20092510.png" />
 </p>
+
+### Usecase 
+- use with input form
+
+### Installation 
+
+```sh
+yarn add @asurraa/sura-ui-rich-text-editor
+```
 
 ### How to use?
 |Props| Description |Type|
