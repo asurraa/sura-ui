@@ -12,15 +12,6 @@ import styled from "styled-components";
 import voca from "voca";
 import { useGetConfigAsuRaaSelectBaseApi } from "./AsurRaaSelectBaseApiProvider";
 
-/**
- * @author lyhourchhen
- * @see [@AsurRaa](https://asurraa.com)
- * @date 2021
- * @components SelectSearchBaseApi
- * @description  search and infinite scrolling for select from api.
- * @stage beta
- */
-
 export interface AsurRaaSelectSearchBaserApiMetaInterface {
   currentPage: number;
   itemCount: number;
