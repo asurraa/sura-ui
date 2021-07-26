@@ -1,40 +1,46 @@
- [![Storybook](https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg)](https://asurraa.github.io/sura-ui/)
+
  
-# @asurraa/sura-ui-modal 
-> Drag and drop modal.
+# @asurraa/sura-ui-rich-text-editor
+> Text Editor in React.
 
 ```sh
-yarn add @asurraa/sura-ui-modal
+yarn add @asurraa/sura-ui-rich-text-editor
 ```
 
-## How to use? 
-```ts
-import {
-  AsurRaaModal,
-  AsurRaaDraggableModalProvider,
-} from "@asurraa/sura-ui-modal";
-import { Button } from "antd";
-import { useState } from "react";
-function App() {
-  const [state, setState] = useState<boolean>(false);
+![enter image description here](https://raw.githubusercontent.com/asurraa/sura-ui/master/packages/rich-text-editor/assets/Screenshot%202021-07-26%20092510.png)
+
+### How to use?
+|Props| Description |Type|
+|--|--|--|
+| value | value for input into the components |	`string`	|
+| default value | default value input into the component for initial value | `string` 
+| onChange | callback data when components change | `(e: string)=> void` 
+
+### Example
+```tsx
+import { Fragment } from "react";
+import { AsurRaaRichTextEditor } from "@asurraa/sura-ui-rich-text-editor";
+const TestPage = () => {
   return (
-    <div className="App">
-      <header className="App-header">Playground</header>
-      <Button onClick={() => setState(true)}>open</Button>
-      <div>
-        <AsurRaaDraggableModalProvider>
-          <AsurRaaModal
-            title={"Test Modal"}
-            onCancel={() => setState(false)}
-            visible={state}
-          />
-        </AsurRaaDraggableModalProvider>
+    <Fragment>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+        }}
+      >
+        <AsurRaaRichTextEditor   />
       </div>
-    </div>
+    </Fragment>
   );
-}
+};
 
-export default App;
-
+export default TestPage;
 
 ```
+
+### Dependency 
+- [draft-js](https://github.com/facebook/draft-js)
+- [draft-editor](https://github.com/HubSpot/draft-convert)
