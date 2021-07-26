@@ -15,3 +15,28 @@ yarn add @asurraa/sura-ui-rich-text-editor
 | value | value for input into the components |	`string`	|
 | default value | default value input into the component for initial value | `string` 
 | onChange | callback data when components change | `(e: string)=> void` 
+
+### Example
+```tsx
+import { Fragment } from "react";
+import { AsurRaaRichTextEditor } from "@asurraa/sura-ui-rich-text-editor";
+const TestPage = () => {
+  return (
+    <Fragment>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+        }}
+      >
+        <AsurRaaRichTextEditor   />
+      </div>
+    </Fragment>
+  );
+};
+
+export default TestPage;
+
+```
