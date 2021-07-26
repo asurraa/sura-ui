@@ -19,8 +19,10 @@ export interface AsurRaaSelectSearchBaserApiMetaInterface {
   totalItems: number;
   totalPages: number;
 }
-export interface AsurRaaSelectSearchBaseApiProps<T> extends SelectProps<any> {
+
+export interface AsurRaaSelectSearchBaseApiProps<T> {
   uriData: string;
+  searchAs: Array<keyof T>;
   onSelectExtend?: (value: T) => void;
   addButtonProps?: React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
@@ -29,17 +31,19 @@ export interface AsurRaaSelectSearchBaseApiProps<T> extends SelectProps<any> {
   showTriggerRefresh?: boolean;
   valueRender: Array<keyof T>;
   renderValueExtra?: (propsData: T) => ReactNode | string;
+  antdSelectProps?: SelectProps<any>;
 }
 
-export const AsurRaaSelectSearchBaseApi = <T extends { id: number }>(
+export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
   props: AsurRaaSelectSearchBaseApiProps<T>
 ) => {
-  const global = useGetConfigAsuRaaSelectBaseApi();
+  const context = useGetConfigAsuRaaSelectBaseApi();
   const { t } = useTranslation();
   const [dataState, setDataState] = useState<Array<T>>([]);
   const [page, setPage] = useState<number>(1);
   const [search, setSearch] = useState<string>();
   const [loading, setLoading] = useState<boolean>(false);
+
   const [meta, setMeta] = useState<AsurRaaSelectSearchBaserApiMetaInterface>({
     currentPage: 1,
     itemCount: 1,
@@ -47,16 +51,26 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number }>(
     totalItems: 1,
     totalPages: 1,
   });
-  const pageParam = global?.uri.page;
-  const searchParam = global?.uri.search;
-  const searchParamInput =
-    search === undefined ? "" : `&${searchParam}=${search}`;
-  const baseUriRoute = `${props.uriData}?${pageParam}=${page}${searchParamInput}`;
+
+  const searchParamGenerate = () => {
+    let fullSearch = "&";
+    props.searchAs.forEach((keyToSearch) => {
+      const inputParam = context?.parseSearch?.(search, keyToSearch.toString());
+      fullSearch = fullSearch + inputParam + "&";
+    });
+    return voca.replaceAll(fullSearch, "undefined", "");
+  };
+
+  const pageParam = context?.uri.page;
+
+  const baseUriRoute = `${
+    props.uriData
+  }?${pageParam}=${page}${searchParamGenerate()}`;
 
   useEffect(() => {
-    global?.fetcher.get(baseUriRoute).then((res: AxiosResponse<any>) => {
-      const data = global?.parseResponse?.data(res);
-      const meta = global?.parseResponse?.meta(res);
+    context?.fetcher.get(baseUriRoute).then((res: AxiosResponse<any>) => {
+      const data = context?.parseResponse?.data(res);
+      const meta = context?.parseResponse?.meta(res);
 
       setDataState(data);
       setMeta(meta);
@@ -65,15 +79,16 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number }>(
   }, [search]);
 
   const fetcher = () => {
-    global?.fetcher.get(baseUriRoute).then((res: AxiosResponse<any>) => {
-      const data = global?.parseResponse?.data(res);
+    context?.fetcher.get(baseUriRoute).then((res: AxiosResponse<any>) => {
+      const data = context?.parseResponse?.data(res);
       setDataState([...dataState, ...data]);
     });
   };
 
   const refreshFetcher = () => {
-    global?.fetcher.get(baseUriRoute).then((res: AxiosResponse<any>) => {
-      const data = global?.parseResponse?.data(res);
+    context?.fetcher.get(baseUriRoute).then((res: AxiosResponse<any>) => {
+      const data = context?.parseResponse?.data(res);
+      console.log("data", res, data);
       setDataState([...data]);
     });
   };
@@ -108,10 +123,10 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number }>(
             setPage(1);
             setSearch(value);
           }}
-          style={{ width: "100%" }}
+          style={{ width: "500px" }}
           onPopupScroll={onScroll}
           defaultActiveFirstOption={true}
-          {...props}
+          {...props.antdSelectProps}
         >
           {loading ? (
             <LoadingOutlined />

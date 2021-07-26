@@ -1,16 +1,18 @@
 import { AxiosInstance, AxiosResponse } from "axios";
-import React, { createContext, FC, useContext } from "react";
+import { createContext, FC, useContext } from "react";
 import { AsurRaaSelectSearchBaserApiMetaInterface } from "./AsurRaaSelectBaseApi";
 
 export interface AsurRaaSelectBaseApiContextInterface {
   fetcher: AxiosInstance;
   uri: {
     page: string;
-    search: string;
   };
+  parseSearch: (searchValue?: string, keyToSearch?: string) => string;
   parseResponse: {
     data: (res: AxiosResponse) => [];
-    meta: (res: AxiosResponse) => AsurRaaSelectSearchBaserApiMetaInterface;
+    meta: (
+      res: AxiosResponse | string | any
+    ) => AsurRaaSelectSearchBaserApiMetaInterface;
   };
 }
 
@@ -27,6 +29,7 @@ const AsurRaaSelectBaseApiProvider: FC<
         fetcher: props.fetcher,
         uri: props.uri,
         parseResponse: props.parseResponse,
+        parseSearch: props.parseSearch,
       }}
     >
       {props.children}
