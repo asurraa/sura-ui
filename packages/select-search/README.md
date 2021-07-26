@@ -60,13 +60,13 @@ export default AppProviderWrapper;
 
 ### Provider Properties
 
-| Props         | Description                                                        | Type                                              | Example                                                                                                |
-| ------------- | ------------------------------------------------------------------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ----------------- | ---------------- |
-| fetcher       | axiosInstance, your custom axios                                   | `AxiosInstance`                                   | AxiosHttp                                                                                              |
-| uri           | define page param name                                             | `{page: string}`                                  | {page: "page"}                                                                                         |
-| parseSearch   | parse what search with your api param                              | `(searchValue: string, key:string)=> string`      | (searchValue, key) => `search[${key}]=${searchValue}` or (searchValue, key) => `search=${searchValue}` |
-| parseResponse | parse what your data & meta response                               | {data: (AxiosResponse)=> [], meta: (AxiosResponse | any                                                                                                    | string)=> string} | see top above :D |
-| metaTotalPage | give cb into company how your Generic Meta and Work with totalPage | (meta: Generic)=> number                          | see top above :D rc-select                                                                             |
+| Props         | Description                                                        | Type                                                                   | Example                                                                                                |
+| ------------- | ------------------------------------------------------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| fetcher       | axiosInstance, your custom axios                                   | `AxiosInstance`                                                        | AxiosHttp                                                                                              |
+| uri           | define page param name                                             | `{page: string}`                                                       | {page: "page"}                                                                                         |
+| parseSearch   | parse what search with your api param                              | `(searchValue: string, key:string)=> string`                           | (searchValue, key) => `search[${key}]=${searchValue}` or (searchValue, key) => `search=${searchValue}` |
+| parseResponse | parse what your data & meta response                               | `{data: (AxiosResponse)=> [], meta: (AxiosResponse \ string)=> string} | see top above :D                                                                                       |
+| metaTotalPage | give cb into company how your Generic Meta and Work with totalPage | `(meta: Generic)=> number`                                             | see top above :D                                                                                       |
 
 ### Components Properties
 
