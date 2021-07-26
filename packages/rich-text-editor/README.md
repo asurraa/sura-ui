@@ -16,7 +16,7 @@
 yarn add @asurraa/sura-ui-rich-text-editor
 ```
 
-### How to use?
+### Property
 |Props| Description |Type|
 |--|--|--|
 | value | value for input into the components |	`string`	|
