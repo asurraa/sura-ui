@@ -15,7 +15,7 @@ import { useGetConfigAsuRaaSelectBaseApi } from "./AsurRaaSelectBaseApiProvider"
 
 export interface AsurRaaSelectSearchBaseApiProps<T> {
   uriData: string;
-  searchAs: Array<keyof T>;
+  searchAs?: Array<keyof T>;
   onSelectExtend?: (value: T) => void;
   addButtonProps?: React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
@@ -41,10 +41,17 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
 
   const searchParamGenerate = () => {
     let fullSearch = "&";
-    props.searchAs.forEach((keyToSearch) => {
-      const inputParam = context?.parseSearch?.(search, keyToSearch.toString());
-      fullSearch = fullSearch + inputParam + "&";
-    });
+    if (props.searchAs === undefined) {
+      fullSearch = context?.parseSearch(search)!;
+    } else {
+      props.searchAs?.forEach((keyToSearch) => {
+        const inputParam = context?.parseSearch?.(
+          search,
+          keyToSearch.toString()
+        );
+        fullSearch = fullSearch + inputParam + "&";
+      });
+    }
     return voca.replaceAll(fullSearch, "undefined", "");
   };
 

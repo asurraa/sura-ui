@@ -73,7 +73,7 @@ export default AppProviderWrapper;
 | Props           | Description                                  | Type                                                | Example                             |
 | --------------- | -------------------------------------------- | --------------------------------------------------- | ----------------------------------- |
 | uriData         | uri route to fetch all data                  | `string`                                            | https://api.example.com/product/all |
-| searchAs        | define search how many search param you want | `Array<keyof Generic>`                              | ["name" ]                           |
+| searchAs        | define search how many search param you want | `Array<keyof Generic>` \ undefine                   | ["name" ]                           |
 | valueRender     | render value of field in dropdown            | `Array<keyof Generic>`                              | ["name", "phone" ]                  |
 | antdSelectProps | all props from antd select                   | [learn more](https://ant.design/components/select/) | antd, rc-select                     |
 
