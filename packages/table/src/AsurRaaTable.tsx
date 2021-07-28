@@ -90,7 +90,7 @@ export interface AsurRaaTableProps<T> {
   detailActionText?: string;
   isVisibleColumn?: boolean;
   noViewAs?: boolean;
-  abilitySubject?: CaslAbilitySubject;
+  abilitySubject?: string;
   noNoColumn?: boolean;
   pageChange?: number;
   renderMoreActionButton?: (props: T) => ReactElement<typeof MenuItem>;
