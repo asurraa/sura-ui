@@ -13,7 +13,7 @@ import styled from "styled-components";
 import voca from "voca";
 import { useGetConfigAsuRaaSelectBaseApi } from "./AsurRaaSelectBaseApiProvider";
 
-export interface AsurRaaSelectSearchBaseApiProps<T> {
+export interface AsurRaaSelectSearchBaseApiProps<T> extends SelectProps<any> {
   uriData: string;
   searchAs?: Array<keyof T>;
   onSelectExtend?: (value: T) => void;
@@ -24,8 +24,6 @@ export interface AsurRaaSelectSearchBaseApiProps<T> {
   showTriggerRefresh?: boolean;
   valueRender: Array<keyof T>;
   renderValueExtra?: (propsData: T) => ReactNode | string;
-  antdSelectProps?: SelectProps<any>;
-  onChange: SelectProps<any>["onChange"];
 }
 
 export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
@@ -121,7 +119,9 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
           onPopupScroll={onScroll}
           defaultActiveFirstOption={true}
           onChange={props.onChange}
-          {...props.antdSelectProps}
+          defaultValue={props.defaultValue}
+          value={props.value}
+          {...props}
         >
           {loading ? (
             <LoadingOutlined />
