@@ -25,6 +25,7 @@ export interface AsurRaaSelectSearchBaseApiProps<T> {
   valueRender: Array<keyof T>;
   renderValueExtra?: (propsData: T) => ReactNode | string;
   antdSelectProps?: SelectProps<any>;
+  onChange: SelectProps<any>["onChange"];
 }
 
 export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
@@ -119,6 +120,7 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
           }}
           onPopupScroll={onScroll}
           defaultActiveFirstOption={true}
+          onChange={props.onChange}
           {...props.antdSelectProps}
         >
           {loading ? (
