@@ -37,6 +37,10 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import { useGetConfigAsurRaaTableApi } from "./AsurRaaTableProvider";
+import {
+  SuraLoadingButton,
+  SuraLoadingButtonProps,
+} from "@asurraa/sura-ui-loading-button";
 
 /**
  * @author lyhourchhen
@@ -54,20 +58,19 @@ const PaddingWrapper = styled.div`
   padding-bottom: 20px;
 `;
 
-type dataIndexManipulator<T> = T extends T ? keyof T : any;
+type DataIndexManipulator<T> = T extends T ? keyof T : any;
 
 // @ts-ignore
 export interface AsurRaaColumnsProps<T = any> extends ColumnProps<T> {
-  dataIndex?: dataIndexManipulator<T>;
+  dataIndex?: DataIndexManipulator<T>;
 }
 // @ts-ignore
 export interface AsurRaaColumnsInterface<T = any> extends ColumnProps<T> {
-  dataIndex?: dataIndexManipulator<T>;
+  dataIndex?: DataIndexManipulator<T>;
 }
 
-export interface refreshButtonProps extends ButtonProps {
-  animate?: boolean;
-}
+export type RefreshButtonProps = ButtonProps &
+  Pick<SuraLoadingButtonProps, "animate">;
 
 export type CaslAbilitySubject = "all";
 
@@ -75,7 +78,7 @@ type ViewMode = "COLUMN" | "TABLE" | "CALENDER";
 export interface AsurRaaTableProps<T> {
   antdTableProps?: TableProps<T>;
   createButton?: ButtonProps | undefined;
-  refreshButton?: refreshButtonProps | undefined;
+  refreshButton?: RefreshButtonProps | undefined;
   asurRaaColumnProps: Array<AsurRaaColumnsProps>;
   data: Array<T>;
   dataAllCSV?: Array<any> | undefined;
@@ -346,12 +349,14 @@ export const AsurRaaTable = <T extends unknown>(
               )}
               {props.refreshButton !== undefined ? (
                 <Fragment>
-                  <Button {...props.refreshButton} style={{ marginRight: 20 }}>
-                    <Loading3QuartersOutlined
-                      spin={props.refreshButton.animate}
-                    />
+                  <SuraLoadingButton
+                    component={Button}
+                    componentProps={{
+                      ...props.refreshButton,
+                    }}
+                  >
                     {t(titleConfig?.refreshButton ?? "refresh")}
-                  </Button>
+                  </SuraLoadingButton>
                 </Fragment>
               ) : null}
             </div>

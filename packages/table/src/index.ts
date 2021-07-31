@@ -24,7 +24,7 @@ export type {
   AsurRaaColumnsProps,
   AsurRaaTableProps,
   AsurRaaColumnsInterface,
-  refreshButtonProps,
+  RefreshButtonProps,
 } from "./AsurRaaTable";
 export type {
   AsurRaaTableContextInterface,
