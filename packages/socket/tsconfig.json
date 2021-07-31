@@ -5,5 +5,7 @@
     "outDir": "./dist",
     "noLib": false,
     "downlevelIteration": true
-  }
+  },
+
+  "exclude": ["dist"]
 }

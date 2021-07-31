@@ -255,7 +255,7 @@ export const AsurRaaTable = <T extends unknown>(
     title: t("N.O"),
     key: "no",
     fixed: "right",
-    align: "center",
+    align: "right",
     width: "20px",
     ellipsis: true,
     render: (__, _, index) => {

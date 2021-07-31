@@ -4,5 +4,6 @@
     "baseUrl": "./",
     "outDir": "./dist",
     "noLib": false
-  }
+  },
+  "exclude": ["dist"]
 }

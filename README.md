@@ -49,5 +49,6 @@ The combine series of components & utilities are placed here to support our deve
 | [socket](https://github.com/asurraa/sura-ui/tree/master/packages/socket)                               | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-socket.svg?style=flat-square?style=flat-square)                | Handling socket && web sockets                 |
 | [fetcher](https://github.com/asurraa/sura-ui/tree/master/packages/fetcher)                             | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-fetcher.svg?style=flat-square?style=flat-square)               | Crud fetch wrapper built on top of React Query |
 | [async-mask-components](https://github.com/asurraa/sura-ui/tree/master/packages/async-mask-components) | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-async-mask-components.svg?style=flat-square?style=flat-square) | Mask component with fetcher query              |
+| [loading-button](https://github.com/asurraa/sura-ui/tree/master/packages/async-loading-button)         | ![npm package](https://img.shields.io/npm/v/@asurraa/sura-ui-async-loading-button.svg?style=flat-square?style=flat-square)  | wrap loading with antd button                  |
 
 ### @asurraa

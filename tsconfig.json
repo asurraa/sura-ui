@@ -19,5 +19,5 @@
     "isolatedModules": false,
     "baseUrl": "."
   },
-  "exclude": ["playground"]
+  "exclude": ["playground", "node_modules", "dist"]
 }

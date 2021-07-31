@@ -16,7 +16,7 @@
   },
   "scripts": {
     "prebuild": "rimraf dist",
-    "dev": "yarn prebuild && tsc -w",
+    "dev": "yarn tsc -w",
     "prepublish": "yarn build",
     "build": "tsc"
   },

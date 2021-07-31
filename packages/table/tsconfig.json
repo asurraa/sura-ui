@@ -4,5 +4,6 @@
     "baseUrl": "./",
     "outDir": "./dist",
     "noUnusedLocals": false
-  }
+  },
+  "exclude": ["dist"]
 }
