@@ -18,6 +18,7 @@ export interface SuraLoadingButtonProps {
     ButtonProps & RefAttributes<HTMLElement>
   >;
   componentProps?: Partial<SuraLoadingButtonProps["component"]["defaultProps"]>;
+  animate?: boolean;
 }
 
 export const SuraLoadingButton: FC<SuraLoadingButtonProps> = (props) => {
@@ -35,7 +36,16 @@ export const SuraLoadingButton: FC<SuraLoadingButtonProps> = (props) => {
         }, props.loadingTiming ?? 1000);
       }}
     >
-      <SyncOutlined {...props.loadingSyncProps} spin={isLoading} />
+      <div style={{ display: "flex" }}>
+        <div>
+          <SyncOutlined
+            {...props.loadingSyncProps}
+            spin={props.animate ? isLoading : props.animate}
+          />
+        </div>
+        <div style={{ paddingRight: 5 }} />
+        <div>{props.children}</div>
+      </div>
     </Component>
   );
 };
