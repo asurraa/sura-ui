@@ -51,7 +51,12 @@ function App() {
   return (
     <div className="App">
       <AsurRaaTableProvider formateDate={"DD-MM-YYYY"}>
-        <AsurRaaTable data={dataSource} asurRaaColumnProps={columns} />
+        <AsurRaaTable
+          data={dataSource}
+          asurRaaColumnProps={columns}
+          createButton={{}}
+          refreshButton={{}}
+        />
       </AsurRaaTableProvider>
     </div>
   );

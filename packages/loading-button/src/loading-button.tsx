@@ -40,7 +40,7 @@ export const SuraLoadingButton: FC<SuraLoadingButtonProps> = (props) => {
         <div>
           <SyncOutlined
             {...props.loadingSyncProps}
-            spin={props.animate ? isLoading : props.animate}
+            spin={props.animate === undefined ? isLoading : props.animate}
           />
         </div>
         <div style={{ paddingRight: 5 }} />
