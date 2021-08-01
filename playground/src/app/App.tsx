@@ -49,13 +49,15 @@ function App() {
   ];
 
   return (
-    <div className="App">
+    <div className="App" style={{ padding: 30 }}>
       <AsurRaaTableProvider formateDate={"DD-MM-YYYY"}>
         <AsurRaaTable
           data={dataSource}
           asurRaaColumnProps={columns}
           createButton={{}}
-          refreshButton={{}}
+          refreshButton={{
+            onClick: () => console.log("refreshButton clicked"),
+          }}
         />
       </AsurRaaTableProvider>
     </div>

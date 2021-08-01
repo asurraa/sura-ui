@@ -347,17 +347,20 @@ export const AsurRaaTable = <T extends unknown>(
                   ) : null}
                 </Fragment>
               )}
+
               {props.refreshButton !== undefined ? (
-                <div style={{ marginRight: 20 }}>
-                  <SuraLoadingButton
-                    component={Button}
-                    componentProps={{
-                      ...props.refreshButton,
-                    }}
-                  >
-                    {t(titleConfig?.refreshButton ?? "refresh")}
-                  </SuraLoadingButton>
-                </div>
+                <SuraLoadingButton
+                  component={Button}
+                  onClick={props.refreshButton.onClick}
+                  componentProps={{
+                    ...props.refreshButton,
+                    style: {
+                      marginRight: 20,
+                    },
+                  }}
+                >
+                  {t(titleConfig?.refreshButton ?? "refresh")}
+                </SuraLoadingButton>
               ) : null}
             </div>
             <div>
