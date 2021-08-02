@@ -257,8 +257,8 @@ export const AsurRaaTable = <T extends unknown>(
   const NOColumnObj: AsurRaaColumnsProps<T> = {
     title: t("N.O"),
     key: "no",
-    fixed: "right",
-    align: "right",
+    fixed: "left",
+    align: "center",
     width: "20px",
     ellipsis: true,
     render: (__, _, index) => {
