@@ -55,6 +55,7 @@ function App() {
           data={dataSource}
           asurRaaColumnProps={columns}
           createButton={{}}
+          noNoColumn={true}
           refreshButton={{
             onClick: () => console.log("refreshButton clicked"),
           }}

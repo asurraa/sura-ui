@@ -8,7 +8,6 @@ import {
   EditOutlined,
   ExclamationCircleOutlined,
   EyeOutlined,
-  Loading3QuartersOutlined,
   LoadingOutlined,
   PlusCircleOutlined,
   TableOutlined,
@@ -41,12 +40,6 @@ import {
   SuraLoadingButton,
   SuraLoadingButtonProps,
 } from "@asurraa/sura-ui-loading-button";
-
-/**
- * @author lyhourchhen
- * @see [@AsurRaa](https://developer.asurraa.com)
- * @date 2021
- */
 
 const Flexbox = styled.div`
   display: flex;
@@ -279,7 +272,6 @@ export const AsurRaaTable = <T extends unknown>(
     actionColumnObj,
   ];
   const columnsNoAction: Array<AsurRaaColumnsProps<T>> = [
-    NOColumnObj,
     ...props.asurRaaColumnProps,
   ];
 
