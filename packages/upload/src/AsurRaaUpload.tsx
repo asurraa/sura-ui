@@ -1,13 +1,16 @@
 import { Upload } from "antd";
 import ImgCrop, { ImgCropProps } from "antd-img-crop";
 import { UploadFile, UploadProps } from "antd/lib/upload/interface";
-import React from "react";
 import { FC, useEffect, useState } from "react";
 import { useGetProviderAsurRaaUpload } from "./AsurRaaUploadProvider";
 
-export interface AsurRaaSingleUploadProps extends UploadProps {
-  getReturnUrl?: (url: any) => void;
-  defaultImage?: string | null | undefined;
+type Value = string | null | undefined;
+export interface AsurRaaSingleUploadProps
+  extends Omit<UploadProps, "onChange"> {
+  onChange?: (url: string) => void;
+  getReturnUrl?: (url: string) => void;
+  defaultImage?: Value;
+  value: Value;
   corpProps?: ImgCropProps;
 }
 export interface uploadInterface {
@@ -20,6 +23,7 @@ export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
   const [fileList, setFileList] = useState<Array<UploadFile<uploadInterface>>>(
     []
   );
+
   const imageUrl = `${global?.returnImagePath}${props?.defaultImage}`;
 
   useEffect(() => {
@@ -37,8 +41,6 @@ export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
               : imageUrl,
           size: 100,
           type: "",
-          // @ts-ignore
-          originFileObj: "hi",
         },
       ]);
     }
@@ -51,6 +53,7 @@ export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
   }) => {
     setFileList(newFileList);
     props?.getReturnUrl?.(newFileList[0]?.response);
+    props?.onChange?.(newFileList[0]?.response);
   };
 
   const onPreview = async (file: UploadFile) => {

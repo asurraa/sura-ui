@@ -1,0 +1,3 @@
+[submodule "asurraa-react-admin-starter"]
+	path = asurraa-react-admin-starter
+	url = git@github.com:asurraa/asurraa-react-admin-starter.git
