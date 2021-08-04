@@ -1,4 +1,3 @@
-import React from "react";
 import { HttpRequestHeader } from "antd/lib/upload/interface";
 import { createContext, FC, useContext } from "react";
 
