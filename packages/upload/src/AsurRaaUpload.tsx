@@ -9,8 +9,8 @@ export interface AsurRaaSingleUploadProps
   extends Omit<UploadProps, "onChange"> {
   onChange?: (url: string) => void;
   getReturnUrl?: (url: string) => void;
-  defaultImage?: Value;
-  value: Value;
+  defaultValue?: Value;
+  value?: Value;
   corpProps?: ImgCropProps;
 }
 export interface uploadInterface {
@@ -24,19 +24,19 @@ export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
     []
   );
 
-  const imageUrl = `${global?.returnImagePath}${props?.defaultImage}`;
+  const imageUrl = `${global?.returnImagePath}${props?.defaultValue}`;
 
   useEffect(() => {
-    if (props.defaultImage !== undefined) {
+    if (props.defaultValue !== undefined) {
       setFileList([
         {
           uid: "-1",
           name: "image.png",
           status: "done",
           url:
-            props.defaultImage === null ||
-            props.defaultImage === undefined ||
-            props.defaultImage === ""
+            props.defaultValue === null ||
+            props.defaultValue === undefined ||
+            props.defaultValue === ""
               ? undefined
               : imageUrl,
           size: 100,
@@ -44,7 +44,7 @@ export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
         },
       ]);
     }
-  }, [props.defaultImage]);
+  }, [props.defaultValue]);
 
   const onChange = ({
     fileList: newFileList,
@@ -85,6 +85,7 @@ export const AsurRaaSingleUpload: FC<AsurRaaSingleUploadProps> = (props) => {
           listType="picture-card"
           // @ts-ignore
           fileList={fileList}
+          {...props}
           onChange={onChange}
           onPreview={onPreview}
         >
