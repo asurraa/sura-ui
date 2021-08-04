@@ -25,7 +25,8 @@
     "dev": "lerna run dev --stream",
     "rm": "rimraf packages/*/dist",
     "package-publish": "yarn rm && yarn lerna publish from-package",
-    "wizard": "yarn lerna-wizard"
+    "wizard": "yarn lerna-wizard",
+    "sub-module": "sh scripts/git.sh"
   },
   "dependencies": {
     "@casl/ability": "^5.2.2",
