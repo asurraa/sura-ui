@@ -1,6 +1,6 @@
 {
   "name": "@asurraa/sura-ui-async-mask-components",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "author": "@asurraa",
   "license": "MIT",
@@ -16,10 +16,10 @@
     "prettier": "prettier -c --write \"**/*\""
   },
   "dependencies": {
-    "react-color": "^2.19.3",
-    "reactcss": "^1.2.3",
     "@types/react-color": "^3.0.4",
-    "@types/reactcss": "^1.2.3"
+    "@types/reactcss": "^1.2.3",
+    "react-color": "^2.19.3",
+    "reactcss": "^1.2.3"
   },
   "files": [
     "dist"
