@@ -11,5 +11,5 @@ yarn add @asurraa/sura-ui-hooks
 | Name                  | Description                                 |
 | --------------------- | ------------------------------------------- |
 | `useSuraEditableData` | Global hook to store editable data state.   |
-| `useSuraModal.`       | Global hook to open / off modal.            |
+| `useSuraModal`       | Global hook to open / off modal.            |
 | `useSuraPage`         | Global hook to get page in every form page. |
