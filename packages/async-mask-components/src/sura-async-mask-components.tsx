@@ -1,16 +1,8 @@
 import { LoadingOutlined } from "@ant-design/icons";
 import { Fragment, ReactNode, useEffect, useState } from "react";
 
-export type FetcherType<T> = Promise<
-  | {
-      data: T;
-      error?: any;
-    }
-  | { error: any; data?: undefined }
->;
-
 export interface SuraAsyncMaskComponentsProps<T> {
-  fetcher: FetcherType<T>;
+  fetcherCache: { data: T };
   query: Array<keyof T>;
   render?: (
     value: string,
@@ -18,20 +10,19 @@ export interface SuraAsyncMaskComponentsProps<T> {
     arrayValue: string[]
   ) => ReactNode | JSX.Element;
 }
+
 export const SuraAsyncMaskComponents = <T extends unknown>({
-  fetcher,
   query,
   render,
+  fetcherCache,
 }: SuraAsyncMaskComponentsProps<T>) => {
   const [result, setResult] = useState<T>();
   const [loading, setLoading] = useState(true);
-  // @ts-ignore
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(async () => {
-    const res = await fetcher;
-    setResult(res?.data);
+
+  useEffect(() => {
+    setResult(fetcherCache?.data);
     setLoading(false);
-  }, [fetcher]);
+  }, [fetcherCache?.data]);
 
   // @ts-ignore
   const genericKeyContent = Object?.keys(result ?? {})?.map?.((key) => key);

@@ -7,6 +7,11 @@
 - use with table components + binding with sura-fetcher
 
 ```tsx
+  const {
+    getOnePromise: getOneProductCategory,
+    getAll: getAllCategory,
+    getOne: getOneProductCategoryCache,
+  } = useProductCategoryService();
 const column:AsurRaaColumnsProps<TProductService>[] = [{
     {
       dataIndex: "category_id",
@@ -16,7 +21,7 @@ const column:AsurRaaColumnsProps<TProductService>[] = [{
         return (
           <SuraAsyncMaskComponents
             query={["name"]}
-            fetcher={getOneProductCategory({ id: props.category_id })}
+            fetcher={getOneProductCategoryCache({ id: props.category_id })}
             render={(value, loading) => {
               return <Tag>{value}</Tag>;
             }}
