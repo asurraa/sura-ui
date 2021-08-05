@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import { isProductionModeFunc } from "./isProductionMode";
+import { getIsProductionModeFunc } from "./getIsProductionMode";
 type Color = "#FFFFFF" | "#FF0000" | "#0000FF";
 
 export class Logger {
@@ -15,10 +15,10 @@ export class Logger {
     );
   }
   static log(...args: unknown[]) {
-    isProductionModeFunc({}) ? null : console.log(...args);
+    getIsProductionModeFunc({}) ? null : console.log(...args);
   }
   static data(...args: unknown[]) {
-    isProductionModeFunc({})
+    getIsProductionModeFunc({})
       ? null
       : console.log(
           `%c ${JSON.stringify(args, null, 2)}! `,
@@ -26,13 +26,13 @@ export class Logger {
         );
   }
   static info(...data: any[]): void {
-    isProductionModeFunc({}) ? null : console.log(data);
+    getIsProductionModeFunc({}) ? null : console.log(data);
   }
   static error(...data: any[]): void {
-    isProductionModeFunc({}) ? null : console.error(data);
+    getIsProductionModeFunc({}) ? null : console.error(data);
   }
   static warn(...data: any[]): void {
-    isProductionModeFunc({}) ? null : console.warn(data);
+    getIsProductionModeFunc({}) ? null : console.warn(data);
   }
   static color(color: Color, ...args: unknown[]) {
     const WHITE: Color = "#FFFFFF";
@@ -40,7 +40,7 @@ export class Logger {
     const BLUE: Color = "#0000FF";
     const colorBook = [WHITE, RED, BLUE];
     const selectColor = colorBook.find((c) => c === color);
-    isProductionModeFunc({})
+    getIsProductionModeFunc({})
       ? null
       : console.log(
           `%c ${JSON.stringify(args, null, 2)}! `,

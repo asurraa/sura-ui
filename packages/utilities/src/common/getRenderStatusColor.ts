@@ -3,7 +3,7 @@
 // *
 
 /* eslint-disable indent */
-export const getRenderStatusColor = (statusValue: any) => {
+export const getRenderStatusColor = (statusValue: string) => {
   switch (statusValue) {
     case "pending":
       return "yellow";
@@ -14,5 +14,6 @@ export const getRenderStatusColor = (statusValue: any) => {
     case "approved":
       return "green";
     default:
+      return "";
   }
 };

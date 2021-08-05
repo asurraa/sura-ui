@@ -46,13 +46,10 @@ export { getPushRouteNewTab } from "./common/getPushRouteNewTab";
 export { getQueryDataDetail } from "./common/getQueryDataDetail";
 export { getRemoveStringWhiteSpace } from "./common/getRemoveStringWhiteSpace";
 export { getRenderStatusColor } from "./common/getRenderStatusColor";
-export { getReturnDataFromSingleRoute } from "./common/getReturnDataFromSingleRoute";
 export {
   GetReturnEmptyTagProps,
   getReturnEmptyTag,
 } from "./common/getReturnEmptyTag";
-export { getReturnSingleImageFromServer } from "./common/getReturnImageFromServer";
-export { getReturnRenderFromIdToName } from "./common/getReturnRenderFromIdToName";
 export { getReturnZeroWhenUndefine } from "./common/getReturnZeroWhenUndefine";
 export {
   getParseArrayToString,

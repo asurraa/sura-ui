@@ -1,16 +1,13 @@
-// eslint-disable-next-line import/named
-import moment, { Moment } from "moment";
-import voca from "voca";
-import { dateAsurRaaFormatOnlyDate } from "./getDateFormate";
+// *
+// * Trim date format to only date
+// *
 
-import { Logger } from "./logger";
+import moment from "moment";
 
+const dateAsurRaaFormatOnlyDate = "YYYY-MM-DD";
 export const getTrimIntoColumnOnlyDate = (
   dateString: string | undefined
 ): string => {
-  // const trimDate = voca.split(dateString, "T");
-  // return trimDate[0];
-
   if (!dateString) {
     return "";
   }
@@ -37,7 +34,7 @@ export const getTrimIntoColumnOnlyTimeWithoutSecond = (
 };
 
 export const getTrimIntoColumnDateAndTime = (
-  dateString: string | undefined | Date | Moment
+  dateString: string | undefined | Date
 ): string => {
   const time = moment(dateString).format("YYYY-MM-DD h:mm:ss a");
   return time;
