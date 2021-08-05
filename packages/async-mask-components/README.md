@@ -20,7 +20,7 @@ const column:AsurRaaColumnsProps<TProductService>[] = [{
       render: (value, props) => {
         return (
           <SuraAsyncMaskComponents
-            query={["name"]}
+            queryCache={["name"]}
             fetcher={getOneProductCategoryCache({ id: props.category_id })}
             render={(value, loading) => {
               return <Tag>{value}</Tag>;
