@@ -1,0 +1,25 @@
+{
+  "name": "@asurraa/sura-ui-hook-form",
+  "version": "1.0.0",
+  "description": "Hook form use to support react hook form workflow",
+  "author": "@asurraa",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "source": "src/index.tsx",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "dev": "tsc -w",
+    "build": "tsc --build tsconfig.json",
+    "deps": "yarn upgrade-interactive --latest",
+    "prepublish": "yarn build",
+    "prettier": "prettier -c --write \"**/*\""
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "react-hook-form": "^7.12.2"
+  },
+  "gitHead": "d7a4d203ba690ed1ddffd6e72c2e11694262d381"
+}
