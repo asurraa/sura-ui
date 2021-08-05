@@ -1,4 +1,11 @@
-export const fixNumberFunc = (value: number, decimal_part: number) => {
+// **
+// * Check Weather Developments is Production or developments.
+// **
+
+export const getFixNumberSeparateFunc = (
+  value: number,
+  decimal_part: number
+) => {
   return (
     Math.round(value * Math.pow(10, decimal_part)) / Math.pow(10, decimal_part)
   )
