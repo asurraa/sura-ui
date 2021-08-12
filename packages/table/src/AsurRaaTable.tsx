@@ -334,7 +334,7 @@ export const AsurRaaTable = <T extends unknown>(
                   {props.createButton !== undefined ? (
                     <Button {...props.createButton} style={{ marginRight: 20 }}>
                       <PlusCircleOutlined />
-                      {t(titleConfig?.createButton ?? "add")}
+                      {t(titleConfig?.createButton ?? t("add"))}
                     </Button>
                   ) : null}
                 </Fragment>
@@ -351,7 +351,7 @@ export const AsurRaaTable = <T extends unknown>(
                     },
                   }}
                 >
-                  {t(titleConfig?.refreshButton ?? "refresh")}
+                  {t(titleConfig?.refreshButton ?? t("refresh"))}
                 </SuraLoadingButton>
               ) : null}
             </div>
