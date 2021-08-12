@@ -21,11 +21,14 @@
     "morty",
     "peaceiris",
     "prebuild",
+    "preload",
     "reactcss",
+    "resizer",
     "stylelint",
     "teamouy",
     "vfile",
     "voca",
-    "yarnpkg"
+    "yarnpkg",
+    "zustand"
   ]
 }
