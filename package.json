@@ -26,7 +26,7 @@
     "rm": "rimraf packages/*/dist",
     "package-publish": "yarn rm && yarn lerna publish from-package",
     "wizard": "yarn lerna-wizard",
-    "sub-module": "sh scripts/git.sh"
+    "sub-module": "./scripts/fetch-submodule.mjs"
   },
   "dependencies": {
     "@casl/ability": "^5.2.2",
