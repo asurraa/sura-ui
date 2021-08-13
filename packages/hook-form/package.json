@@ -1,6 +1,6 @@
 {
   "name": "@asurraa/sura-ui-hook-form",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hook form use to support react hook form workflow",
   "author": "@asurraa",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "dist"
   ],
   "dependencies": {
+    "@hookform/error-message": "^2.0.0",
     "react-hook-form": "^7.12.2"
   },
   "gitHead": "d7a4d203ba690ed1ddffd6e72c2e11694262d381"
