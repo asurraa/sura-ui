@@ -20,7 +20,7 @@ export type AsurRaaInputFormControllerProps<T> = Omit<
   errorsProps?: ErrorMessageProps<T, any>;
 };
 
-export const SuraController = <T extends { x: string }>(
+export const SuraController = <T extends unknown>(
   props: AsurRaaInputFormControllerProps<T>
 ) => {
   return (
