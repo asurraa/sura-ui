@@ -1,11 +1,10 @@
 {
   "name": "@asurraa/sura-ui-dropdown-filter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Utilities function use internally at AsurRaa.",
   "author": "@asurraa",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -16,7 +15,7 @@
     "prettier": "prettier -c --write \"**/*\""
   },
   "dependencies": {
-    "@asurraa/sura-ui-select": "1.0.0"
+    "@asurraa/sura-ui-select": "^1.0.1"
   },
   "files": [
     "dist"

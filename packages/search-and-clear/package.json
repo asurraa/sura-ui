@@ -1,12 +1,11 @@
 {
   "name": "@asurraa/sura-ui-search-and-clear",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "asurraa search-and-clear",
   "author": "@asurraa",
   "license": "MIT",
   "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/search-and-clear",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"

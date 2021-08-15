@@ -1,11 +1,10 @@
 {
   "name": "@asurraa/sura-ui-image-viewer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "image-viewer",
   "author": "@asurraa",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "scripts": {
     "dev": "tsc -w",

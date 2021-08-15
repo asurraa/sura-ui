@@ -1,12 +1,11 @@
 {
   "name": "@asurraa/sura-ui-table",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "asurraa table component",
   "author": "@asurraa",
   "license": "MIT",
   "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/table",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"
@@ -24,7 +23,7 @@
     "dist"
   ],
   "dependencies": {
-    "@asurraa/sura-ui-loading-button": "^1.0.4",
+    "@asurraa/sura-ui-loading-button": "^1.0.5",
     "@types/react-csv": "^1.1.1",
     "@types/styled-components": "^5.1.9",
     "@types/uuid": "^8.3.0",

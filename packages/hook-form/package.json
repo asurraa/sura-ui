@@ -1,11 +1,10 @@
 {
   "name": "@asurraa/sura-ui-hook-form",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Hook form use to support react hook form workflow",
   "author": "@asurraa",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "scripts": {
     "prebuild": "rimraf dist",

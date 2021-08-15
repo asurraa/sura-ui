@@ -1,11 +1,10 @@
 {
   "name": "@asurraa/sura-ui-socket",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sockets Handler with React",
   "author": "@asurraa",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "dependencies": {
     "socket.io-client": "^2.4.0"

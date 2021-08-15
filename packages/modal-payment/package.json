@@ -1,12 +1,11 @@
 {
   "name": "@asurraa/sura-ui-modal-payment",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "asurraa modal payment component",
   "author": "@asurraa",
   "license": "MIT",
   "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/modal-payment",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"

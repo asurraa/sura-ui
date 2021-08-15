@@ -1,11 +1,10 @@
 {
   "name": "@asurraa/sura-ui-color-picker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utilities function use internally at AsurRaa.",
   "author": "@asurraa",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "scripts": {
     "prebuild": "rimraf dist",
@@ -16,10 +15,10 @@
     "prettier": "prettier -c --write \"**/*\""
   },
   "dependencies": {
-    "react-color": "^2.19.3",
-    "reactcss": "^1.2.3",
     "@types/react-color": "^3.0.4",
-    "@types/reactcss": "^1.2.3"
+    "@types/reactcss": "^1.2.3",
+    "react-color": "^2.19.3",
+    "reactcss": "^1.2.3"
   },
   "files": [
     "dist"

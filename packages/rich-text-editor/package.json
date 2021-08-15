@@ -1,12 +1,11 @@
 {
   "name": "@asurraa/sura-ui-rich-text-editor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "asurraa rich-text-editor",
   "author": "@asurraa",
   "license": "MIT",
   "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/rich-text-editor",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"

@@ -1,12 +1,11 @@
 {
   "name": "@asurraa/sura-ui-modal",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "asurraa modal component",
   "author": "@asurraa",
   "license": "MIT",
   "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/modal",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"

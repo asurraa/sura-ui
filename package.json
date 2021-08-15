@@ -2,9 +2,6 @@
   "name": "sura-ui",
   "author": "@asurraa",
   "version": "1.0.0",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
-  "source": "src/index.tsx",
   "private": "true",
   "repository": {
     "type": "git",

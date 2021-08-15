@@ -1,11 +1,10 @@
 {
   "name": "@asurraa/sura-ui-teamouy",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A collection of configuration files containing prettier, eslint, stylelint use internally at AsurRaa.",
   "author": "@asurraa",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "scripts": {
     "prebuild": "rimraf dist",

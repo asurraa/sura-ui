@@ -1,12 +1,11 @@
 {
   "name": "@asurraa/sura-ui-select-search",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "asurraa select search component base on api",
   "author": "@asurraa",
   "license": "MIT",
   "repository": "https://github.com/asurraa/sura-ui/tree/master/packages/select-search",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "engines": {
     "node": ">=10"

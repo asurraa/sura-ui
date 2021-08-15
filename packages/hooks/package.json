@@ -1,11 +1,10 @@
 {
   "name": "@asurraa/sura-ui-hooks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Hook Utilities use internally at AsurRaa.",
   "author": "@asurraa",
   "license": "MIT",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
   "source": "src/index.tsx",
   "scripts": {
     "prebuild": "rimraf dist",
