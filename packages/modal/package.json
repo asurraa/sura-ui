@@ -14,7 +14,7 @@
     "react": "17.0.2"
   },
   "scripts": {
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist && yarn build",
     "dev": "yarn prebuild && tsc -w",
     "build": "tsc"
   },
