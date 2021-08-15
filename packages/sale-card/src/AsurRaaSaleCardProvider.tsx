@@ -1,4 +1,3 @@
-import React from "react";
 import { createContext, FC, useContext } from "react";
 
 export interface AsurRaaSaleCardContextInterface {

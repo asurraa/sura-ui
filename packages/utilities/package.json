@@ -20,5 +20,6 @@
   "dependencies": {
     "html-react-parser": "^1.2.7",
     "jwt-decode": "^3.1.2"
-  }
+  },
+  "gitHead": "3af8f35a2ea515a86b7e4282add56301bda6916b"
 }

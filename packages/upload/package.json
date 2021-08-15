@@ -19,5 +19,6 @@
   ],
   "dependencies": {
     "antd-img-crop": "^3.14.1"
-  }
+  },
+  "gitHead": "3af8f35a2ea515a86b7e4282add56301bda6916b"
 }
