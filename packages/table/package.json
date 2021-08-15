@@ -1,6 +1,6 @@
 {
   "name": "@asurraa/sura-ui-table",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "description": "asurraa table component",
   "author": "@asurraa",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "dist"
   ],
   "dependencies": {
-    "@asurraa/sura-ui-loading-button": "^1.0.6",
+    "@asurraa/sura-ui-loading-button": "^1.0.7",
     "@types/react-csv": "^1.1.1",
     "@types/styled-components": "^5.1.9",
     "@types/uuid": "^8.3.0",

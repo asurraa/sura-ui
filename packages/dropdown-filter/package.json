@@ -1,6 +1,6 @@
 {
   "name": "@asurraa/sura-ui-dropdown-filter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Utilities function use internally at AsurRaa.",
   "author": "@asurraa",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "prettier": "prettier -c --write \"**/*\""
   },
   "dependencies": {
-    "@asurraa/sura-ui-select": "^1.0.2"
+    "@asurraa/sura-ui-select": "^1.0.3"
   },
   "files": [
     "dist"
