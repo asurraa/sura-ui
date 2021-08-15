@@ -1,6 +1,6 @@
 import { Select } from "antd";
 import moment from "moment";
-import React, { FC } from "react";
+import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import { AsurRaaSelectProps } from "@asurraa/sura-ui-select";
 import { useGetAsurRaaDropdown } from "./AsurRaaDropdownFilterProvider";
