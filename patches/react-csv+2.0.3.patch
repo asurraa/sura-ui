@@ -1,0 +1,4 @@
+diff --git a/node_modules/react-csv/src/components/Link.js b/node_modules/react-csv/src/components/Link.jsx
+similarity index 100%
+rename from node_modules/react-csv/src/components/Link.js
+rename to node_modules/react-csv/src/components/Link.jsx

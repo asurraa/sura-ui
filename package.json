@@ -23,7 +23,8 @@
     "rm": "rimraf packages/*/dist",
     "package-publish": "yarn rm && yarn lerna publish from-package",
     "wizard": "yarn lerna-wizard",
-    "sub-module": "./scripts/fetch-submodule.mjs"
+    "sub-module": "./scripts/fetch-submodule.mjs",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@casl/ability": "^5.2.2",
@@ -56,6 +57,8 @@
     "babel-loader": "^8.2.2",
     "lerna": "^4.0.0",
     "lerna-wizard": "^1.1.1",
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
     "tsconfig-paths-webpack-plugin": "^3.5.1"
   }
 }
