@@ -24,7 +24,7 @@ export interface AsurRaaSelectSearchBaseApiProps<T> extends SelectProps<any> {
   showTriggerRefresh?: boolean;
   valueRender: Array<keyof T>;
   renderValueExtra?: (propsData: T) => ReactNode | string;
-  onChangeClickAnotherValue: (value: any, propsValue: T) => void;
+  onChangeClickAnotherValue?: (value: any, propsValue: T) => void;
 }
 
 export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
@@ -140,7 +140,7 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
                   <Select.Option value={data.id} key={arrayIndex}>
                     <div
                       onClick={() => {
-                        props.onChangeClickAnotherValue(textRight, data);
+                        props.onChangeClickAnotherValue?.(textRight, data);
                       }}
                       style={{
                         display: "flex",
