@@ -24,6 +24,7 @@ export interface AsurRaaSelectSearchBaseApiProps<T> extends SelectProps<any> {
   showTriggerRefresh?: boolean;
   valueRender: Array<keyof T>;
   renderValueExtra?: (propsData: T) => ReactNode | string;
+  onChangeClickAnotherValue: (value: any, propsValue: T) => void;
 }
 
 export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
@@ -118,7 +119,9 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
           }}
           onPopupScroll={onScroll}
           defaultActiveFirstOption={true}
-          onChange={props.onChange}
+          onChange={(...rest) => {
+            props.onChange?.(...rest);
+          }}
           defaultValue={props.defaultValue}
           value={props.value}
           {...props}
@@ -136,6 +139,9 @@ export const AsurRaaSelectSearchBaseApi = <T extends { id: number | string }>(
                 return (
                   <Select.Option value={data.id} key={arrayIndex}>
                     <div
+                      onClick={() => {
+                        props.onChangeClickAnotherValue(textRight, data);
+                      }}
                       style={{
                         display: "flex",
                         justifyContent: "space-between",
